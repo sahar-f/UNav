@@ -1,0 +1,325 @@
+{
+    "m_SelectedDeviceId": "R5CT927WZLD",
+    "m_SelectedPackage": {
+        "deviceId": "R5CT927WZLD",
+        "name": "com.DefaultCompany.UnavTest1",
+        "processId": 32670,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 25894,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 24352,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 29359,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 29095,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.sec.android.app.launcher",
+            "processId": 3549,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 30416,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 30907,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 10899,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 15636,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 16442,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 22255,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 25540,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 27015,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 19051,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 20210,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 21073,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 23592,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 30355,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 32004,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 1041,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 2101,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 5919,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 8283,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 11138,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 13325,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 15222,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 18938,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 20795,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 21605,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 22784,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 25314,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 26982,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 28018,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 28706,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 29667,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 30190,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 30687,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 31168,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 31714,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 32167,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UnavTest1",
+            "processId": 32670,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "Behavior": 0
+    },
+    "m_FilterOptions": {
+        "m_Filter": "",
+        "m_UseRegularExpressions": true,
+        "m_MatchCase": true
+    },
+    "m_SymbolPaths": [],
+    "m_CaptureVideoSettings": {
+        "TimeLimitEnabled": false,
+        "TimeLimit": 180,
+        "VideoSizeEnabled": false,
+        "VideoSizeX": 1280,
+        "VideoSizeY": 720,
+        "BitRateEnabled": false,
+        "BitRateK": 20000,
+        "DisplayIdEnabled": false,
+        "DisplayId": ""
+    }
+}
