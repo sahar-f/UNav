@@ -6,12 +6,12 @@ public class Camera_Controller : MonoBehaviour
 {
     Vector3 touchStart;
     public float zoomOutMin = 600;
-    public float zoomOutMax = 2200;
-    public float rate = 5;
+    public float zoomOutMax = 22000;
+    public float rate = 200;
     // Start is called before the first frame update
     void Start()
     {
-        Camera.main.orthographicSize = 600;
+        Camera.main.orthographicSize = 3000;
     }
    
 
