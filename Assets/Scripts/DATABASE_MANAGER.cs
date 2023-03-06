@@ -135,4 +135,5 @@ public class DATABASE_MANAGER : MonoBehaviour
         reader.Close();
         DisconnectFromDatabase();
     }
+    public void Retreive_Restaurant(ref Restaurantstruct rest, )
 }

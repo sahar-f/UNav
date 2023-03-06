@@ -34,6 +34,9 @@ public class SYSTEM : MonoBehaviour
         public string tag;
 
     }
+
+
+
     public static int Number_of_Maps = 3;
     public static int Number_of_Cameras = 1;
     public static Mapstruct[] maps;
