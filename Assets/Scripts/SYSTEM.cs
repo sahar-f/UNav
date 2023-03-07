@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
-
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -10,7 +9,7 @@ using UnityEngine;
 public class SYSTEM : MonoBehaviour
 
 {
-    public struct Mapstruct
+    public struct Map_struct
     {
         public string tag;
         public double location_x, location_y, location_z;
@@ -24,7 +23,7 @@ public class SYSTEM : MonoBehaviour
         public GameObject objectbase;
 
     }
-    public struct Camerastruct
+    public struct Camera_struct
     {
         public Camera objectbase;
         public double location_x, location_y, location_z;
@@ -34,14 +33,138 @@ public class SYSTEM : MonoBehaviour
         public string tag;
 
     }
+    public struct Partner_struct
+    {
+        public int ID;
+        public string name;
+        public int Building_ID;
+        public int Room_ID;
+        public string Phone;
+        public string Email;
+        public string Website;
+        public string Hours_Open_Monday;
+        public string Hours_Close_Monday;
+        public string Hours_Open_Tuesday;
+        public string Hours_Close_Tuesday;
+        public string Hours_Open_Wednesday;
+        public string Hours_Close_Wednesday;
+        public string Hours_Open_Thursday;
+        public string Hours_Close_Thursday;
+        public string Hours_Open_Friday;
+        public string Hours_Close_Friday;
+        public string Hours_Open_Saturday;
+        public string Hours_Close_Saturday;
+        public string Hours_Open_Sunday;
+        public string Hours_Close_Sunday;
+        public string Hours_Open_Holiday;
+        public string Hours_Close_Holiday;
+        public string Info1;
+        public string Info2;
+        public string Info3;
+        public string Info4;
+        public string Info5;
+        
+
+    }
+    public struct Restaurant_struct
+    {
+        public int ID;
+        public string name;
+        public int Building_ID;
+        public int Room_ID;
+        public string Phone;
+        public string Email;
+        public string Website;
+        public string Hours_Open_Monday;
+        public string Hours_Close_Monday;
+        public string Hours_Open_Tuesday;
+        public string Hours_Close_Tuesday;
+        public string Hours_Open_Wednesday;
+        public string Hours_Close_Wednesday;
+        public string Hours_Open_Thursday;
+        public string Hours_Close_Thursday;
+        public string Hours_Open_Friday;
+        public string Hours_Close_Friday;
+        public string Hours_Open_Saturday;
+        public string Hours_Close_Saturday;
+        public string Hours_Open_Sunday;
+        public string Hours_Close_Sunday;
+        public string Hours_Open_Holiday;
+        public string Hours_Close_Holiday;
+        public string Info1;
+        public string Info2;
+        public string Info3;
+        public string Info4;
+        public string Info5;
+
+    }
+    public struct Services_struct
+    {
+        public int ID;
+        public string name;
+        public int Building_ID;
+        public int Room_ID;
+        public string Phone;
+        public string Email;
+        public string Website;
+        public string Hours_Open_Monday;
+        public string Hours_Close_Monday;
+        public string Hours_Open_Tuesday;
+        public string Hours_Close_Tuesday;
+        public string Hours_Open_Wednesday;
+        public string Hours_Close_Wednesday;
+        public string Hours_Open_Thursday;
+        public string Hours_Close_Thursday;
+        public string Hours_Open_Friday;
+        public string Hours_Close_Friday;
+        public string Hours_Open_Saturday;
+        public string Hours_Close_Saturday;
+        public string Hours_Open_Sunday;
+        public string Hours_Close_Sunday;
+        public string Hours_Open_Holiday;
+        public string Hours_Close_Holiday;
+        public string Info1;
+        public string Info2;
+        public string Info3;
+        public string Info4;
+        public string Info5;
+
+    }
+    public struct Events_struct
+    {
+        public int ID;
+        public int OWNER_ID;
+        public string OWNER_TABLE;
+        public string DATE_START;
+        public string DATE_END;
+        public string TIME_START;
+        public string TIME_END;
+        public string OPEN_TO;
+        public string TITLE;
+        public string INFO1;
+        public string INFO2;
+        public string INFO3;
+        public string WEBSITE;
+        public int EventType;
+        public double Location_Lat;
+        public double Location_Lon;
+        public double Location_Alt;
+        public int Location_Building;
+        public int Location_Room;
+        public int PUBLISHED;
+
+    }
 
 
 
     public static int Number_of_Maps = 3;
     public static int Number_of_Cameras = 1;
-    public static Mapstruct[] maps;
-    public static Camerastruct[] cams;
-
+    public static Map_struct[] maps;
+    public static Camera_struct[] cams;
+    public static Restaurant_struct[] restaurants;
+    public static Partner_struct[] partners;
+    public static Services_struct[] services;
+    public static Events_struct[] events;
 
 
     
@@ -87,10 +210,10 @@ public class SYSTEM : MonoBehaviour
     private void system_Load_Maps()
     {
         DATABASE_MANAGER db = GetComponent<DATABASE_MANAGER>();   // get Access to the DB script
-        List<Mapstruct> mapslist = new List<Mapstruct>();
+        List<Map_struct> mapslist = new List<Map_struct>();
         for (int currentmapindex = 0; currentmapindex < Number_of_Maps; currentmapindex++)
         {
-            Mapstruct map = new Mapstruct();
+            Map_struct map = new Map_struct();
             db.Retreive_Map(ref map, currentmapindex +1);        // Pass the MainMap struct and get the DB to fill it in for us, we only want the 
             mapslist.Add(map);
 
@@ -126,10 +249,10 @@ public class SYSTEM : MonoBehaviour
     private void system_Load_Cameras() 
     {
         DATABASE_MANAGER db = GetComponent<DATABASE_MANAGER>();   // get Access to the DB script
-        List<Camerastruct> camslist = new List<Camerastruct>();
+        List<Camera_struct> camslist = new List<Camera_struct>();
         for (int currentcamindex = 0; currentcamindex < Number_of_Cameras; currentcamindex++)
         {
-            Camerastruct cam = new Camerastruct();
+            Camera_struct cam = new Camera_struct();
             db.Retreive_Camera(ref cam, currentcamindex + 1);        // Pass the MainMap struct and get the DB to fill it in for us, we only want the 
             camslist.Add(cam);
 
@@ -149,6 +272,7 @@ public class SYSTEM : MonoBehaviour
             cams[idx].objectbase.transform.Rotate((float)cams[idx].rotation_x, (float)cams[idx].rotation_y, (float)cams[idx].rotation_z);
             cams[idx].objectbase.orthographic = cams[idx].orthographic;
             cams[idx].objectbase.orthographicSize = (float)cams[idx].orthographicSize;
+            cams[idx].objectbase.AddComponent<Camera_Controller>();
         }
 
     }
@@ -167,4 +291,10 @@ public class SYSTEM : MonoBehaviour
         
     }
     
+    private void EVENTS_VISIBLE()
+    { }
+    private void EVENTS_HIDE()
+    { }
+    private void EVENTS_GetINFO(int idx)
+    { }
 }

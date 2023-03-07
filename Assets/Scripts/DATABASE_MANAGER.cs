@@ -6,6 +6,8 @@ using UnityEngine;
 using Mono.Data.Sqlite;
 using static SYSTEM;
 using System.IO;
+using JetBrains.Annotations;
+using System.Runtime.CompilerServices;
 
 public class DATABASE_MANAGER : MonoBehaviour
 {
@@ -73,7 +75,7 @@ public class DATABASE_MANAGER : MonoBehaviour
         dbConnection = null;
     }
 
-    public void Retreive_Map(ref Mapstruct map,int idx)
+    public void Retreive_Map(ref Map_struct map,int idx)
     {
         ConnectToDatabase();
         // Create a new database command
@@ -112,7 +114,7 @@ public class DATABASE_MANAGER : MonoBehaviour
         DisconnectFromDatabase();
 
     }
-    public void Retreive_Camera(ref Camerastruct cam,int idx)
+    public void Retreive_Camera(ref Camera_struct cam,int idx)
     {
         ConnectToDatabase();
         // Create a new database command
@@ -132,8 +134,27 @@ public class DATABASE_MANAGER : MonoBehaviour
         cam.orthographicSize = reader.GetDouble(9);
         cam.tag = reader.GetString(10);
 
-        reader.Close();
-        DisconnectFromDatabase();
+       
     }
-    public void Retreive_Restaurant(ref Restaurantstruct rest, )
+
+    public int Get_BuildingID_By_Name(string name)
+    {
+        int ret = -1;
+        ConnectToDatabase();
+        // Create a new database command
+        IDbCommand dbCommand = dbConnection.CreateCommand();
+        // Set the command text
+
+        dbCommand.CommandText = $"SELECT ID FROM BULDINGS WHERE NAME = '{name}'";
+        IDataReader reader = dbCommand.ExecuteReader();
+        if (reader.Read())
+        {
+            ret = reader.GetInt32(1);
+            reader.Close();
+            DisconnectFromDatabase();
+        }
+        return ret;
+        
+    }
+
 }

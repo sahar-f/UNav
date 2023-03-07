@@ -8,10 +8,12 @@ public class Camera_Controller : MonoBehaviour
     public float zoomOutMin = 600;
     public float zoomOutMax = 22000;
     public float rate = 200;
+    Camera myCamera;
     // Start is called before the first frame update
     void Start()
     {
-        Camera.main.orthographicSize = 3000;
+        myCamera = GetComponent<Camera>();
+        myCamera.orthographicSize = 3000;
     }
    
 
@@ -22,7 +24,7 @@ public class Camera_Controller : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            touchStart = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,2000));
+            touchStart = myCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,2000));
 
         }
         if (Input.touchCount == 2)
@@ -40,19 +42,19 @@ public class Camera_Controller : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2000));
+            Vector3 direction = touchStart - myCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2000));
             Debug.Log("Direction: " + direction);
             Debug.Log("Start" + touchStart);
             Debug.Log("Mouse" + Input.mousePosition);
-            Debug.Log("Camera Mouse: " + Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            Debug.Log("Camera Mouse: " + myCamera.ScreenToWorldPoint(Input.mousePosition));
 
-            Camera.main.transform.position += direction;
+            myCamera.transform.position += direction;
         }
         zoom(Input.GetAxis("Mouse ScrollWheel"));
     }
     void zoom(float increment)
     {
-        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - (increment * rate), zoomOutMin, zoomOutMax);
+        myCamera.orthographicSize = Mathf.Clamp(myCamera.orthographicSize - (increment * rate), zoomOutMin, zoomOutMax);
         //Debug.Log("Size: " + Camera.main.orthographicSize);
     }
 }
