@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Camera_Controller : MonoBehaviour
 {
@@ -8,10 +10,16 @@ public class Camera_Controller : MonoBehaviour
     public float zoomOutMin = 600;
     public float zoomOutMax = 2200;
     public float rate = 5;
+    public TMP_InputField inputField;
+    public float speed = 5f;
+    public GameObject nullTargetMessage;
+
+    private Transform target;
     // Start is called before the first frame update
     void Start()
     {
         Camera.main.orthographicSize = 600;
+        inputField.onSubmit.AddListener(SetTarget);
     }
    
 
@@ -54,5 +62,29 @@ public class Camera_Controller : MonoBehaviour
     {
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - (increment * rate), zoomOutMin, zoomOutMax);
         //Debug.Log("Size: " + Camera.main.orthographicSize);
+    }
+
+    private void SetTarget(string input)
+    {
+        GameObject gameObject = GameObject.Find(input);
+        print(input);
+        if (gameObject != null)
+        {
+            target = gameObject.transform;
+            nullTargetMessage.SetActive(false);
+        }
+        else
+        {
+            target = null;
+            nullTargetMessage.SetActive(true);
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (target != null)
+        {
+            transform.position = Vector3.Lerp(transform.position, target.position, speed * Time.deltaTime);
+        }
     }
 }
