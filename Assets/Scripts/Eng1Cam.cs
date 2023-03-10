@@ -13,10 +13,10 @@ public class Eng1Cam : MonoBehaviour
     void Start()
     {
         Camera.main.orthographicSize = 2000;
-        Player_marker = GameObject.Find("Player");
-        Vector3 targetPosition = Player_marker.transform.position;
+        //Player_marker = GameObject.Find("Player");
+        //Vector3 targetPosition = Player_marker.transform.position;
 
-        Camera.main.transform.position = new Vector3(targetPosition.x, 100f, targetPosition.z);
+        //Camera.main.transform.position = new Vector3(targetPosition.x, 100f, targetPosition.z);
     }
 
 

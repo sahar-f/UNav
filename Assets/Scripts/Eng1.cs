@@ -7,10 +7,12 @@ using UnityEngine;
 public class Eng1 : MonoBehaviour
 {
     private GameObject me_marker;
-    private double UTMRefPointN = 5776980.96;
-    private double UTMRefPointE = 388413.75;
-    public float nScaleRate = 4.7f;
-    public float eScaleRate = 22.93756f;
+    //private double UTMRefPointN = 5776980.96;
+    //private double UTMRefPointE = 388413.75;
+    private double UTMRefPointN = 5776987.77;
+    private double UTMRefPointE = 388407.94;
+    private float nScaleRate = 4.6f;
+    private float eScaleRate = 5.93f;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +77,7 @@ public class Eng1 : MonoBehaviour
             Debug.Log("North Distance : " + North_Distance);
             Debug.Log("East Distance : " + East_Distance);
             
-            me_marker.transform.position = new Vector3(East_Distance *5.93f, 200, North_Distance * nScaleRate);
+            me_marker.transform.position = new Vector3(East_Distance*eScaleRate, 200, North_Distance*nScaleRate);
             Debug.Log("ME X: "+ me_marker.transform.position.x);
             Debug.Log("ME Z: " + me_marker.transform.position.z);
         }
