@@ -11,13 +11,14 @@ public class Eng1 : MonoBehaviour
     //private double UTMRefPointE = 388413.75;
     private double UTMRefPointN = 5776987.77;
     private double UTMRefPointE = 388407.94;
-    private float nScaleRate = 4.6f;
-    private float eScaleRate = 5.93f;
+    private float nScaleRate = 0.46f;
+    private float eScaleRate = 0.593f;
 
     // Start is called before the first frame update
     void Start()
     {
         me_marker = GameObject.Find("Player");
+        me_marker.SetActive(false);
         StartCoroutine(GPSLoc());
     }
 
@@ -78,6 +79,7 @@ public class Eng1 : MonoBehaviour
             Debug.Log("East Distance : " + East_Distance);
             
             me_marker.transform.position = new Vector3(East_Distance*eScaleRate, 200, North_Distance*nScaleRate);
+            me_marker.SetActive(true);
             Debug.Log("ME X: "+ me_marker.transform.position.x);
             Debug.Log("ME Z: " + me_marker.transform.position.z);
         }

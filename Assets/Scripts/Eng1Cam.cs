@@ -5,14 +5,14 @@ using UnityEngine;
 public class Eng1Cam : MonoBehaviour
 {
     Vector3 touchStart;
-    public float zoomOutMin = 600;
-    public float zoomOutMax = 6000;
+    public float zoomOutMin = 1;
+    public float zoomOutMax = 100;
     private GameObject Player_marker;
     public float rate = 5;
     // Start is called before the first frame update
     void Start()
     {
-        Camera.main.orthographicSize = 2000;
+        Camera.main.orthographicSize = 50;
         //Player_marker = GameObject.Find("Player");
         //Vector3 targetPosition = Player_marker.transform.position;
 
@@ -27,7 +27,7 @@ public class Eng1Cam : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            touchStart = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2000));
+            touchStart = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50));
 
         }
         if (Input.touchCount == 2)
@@ -45,7 +45,7 @@ public class Eng1Cam : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 2000));
+            Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 50));
             Debug.Log("Direction: " + direction);
             Debug.Log("Start" + touchStart);
             Debug.Log("Mouse" + Input.mousePosition);
@@ -53,7 +53,7 @@ public class Eng1Cam : MonoBehaviour
 
             Camera.main.transform.position += direction;
         }
-        zoom(500 * (Input.GetAxis("Mouse ScrollWheel")));
+        zoom(10 * (Input.GetAxis("Mouse ScrollWheel")));
     }
     void zoom(float increment)
     {
