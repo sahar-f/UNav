@@ -57,6 +57,7 @@ public class Eng1 : MonoBehaviour
         {
             //Access Granted
             InvokeRepeating("UpdateGPSData", 0.5f, 1f);
+            me_marker.SetActive(true);
         }
 
     } // end of GPSLoc
@@ -79,7 +80,7 @@ public class Eng1 : MonoBehaviour
             Debug.Log("East Distance : " + East_Distance);
             
             me_marker.transform.position = new Vector3(East_Distance*eScaleRate, 200, North_Distance*nScaleRate);
-            me_marker.SetActive(true);
+           
             Debug.Log("ME X: "+ me_marker.transform.position.x);
             Debug.Log("ME Z: " + me_marker.transform.position.z);
         }
