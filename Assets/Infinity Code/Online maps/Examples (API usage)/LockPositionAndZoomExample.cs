@@ -13,11 +13,10 @@ namespace InfinityCode.OnlineMapsExamples
     {
         private void Start()
         {
-            // Lock map zoom range
-            OnlineMaps.instance.zoomRange = new OnlineMapsRange(10, 15);
+            OnlineMaps.instance.zoomRange = new OnlineMapsRange(15f, 20);
 
             // Lock map coordinates range
-            OnlineMaps.instance.positionRange = new OnlineMapsPositionRange(33, -119, 34, -118);
+            OnlineMaps.instance.positionRange = new OnlineMapsPositionRange(52.13214f, -106.63443f, 52.1354f, -106.63001f);
 
             // Initializes the position and zoom
             OnlineMaps.instance.zoom = 10;
