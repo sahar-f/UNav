@@ -7,22 +7,26 @@ using UnityEngine;
 public class Eng1 : MonoBehaviour
 {
     private GameObject me_marker;
-    //private double UTMRefPointN = 5776980.96;
-    //private double UTMRefPointE = 388413.75;
-    private double UTMRefPointN = 5776987.77;
-    private double UTMRefPointE = 388407.94;
-    private float nScaleRate = 0.46f;
-    private float eScaleRate = 0.593f;
+    //mid
+    private double UTMRefPointN = 5777007.97;
+    private double UTMRefPointE = 388499.26;
+    
+
+    //door
+    //private double UTMRefPointN = 5776987.77;
+    //private double UTMRefPointE = 388407.94;
+    //private float nScaleRate = -0.046f;
+    //private float eScaleRate = -6.72f;
 
     // Start is called before the first frame update
     void Start()
     {
         me_marker = GameObject.Find("Player");
-        me_marker.SetActive(false);
+        //me_marker.SetActive(false);
         StartCoroutine(GPSLoc());
     }
 
-
+   
     IEnumerator GPSLoc()
     {
         // Check if location services are enabled for the app
@@ -57,32 +61,49 @@ public class Eng1 : MonoBehaviour
         {
             //Access Granted
             InvokeRepeating("UpdateGPSData", 0.5f, 1f);
-            me_marker.SetActive(true);
+            //me_marker.SetActive(true);
         }
 
-    } // end of GPSLoc
+    } // end of GPSLocz
     private void UpdateGPSData() 
     {
-       
+
         if (Input.location.status == LocationServiceStatus.Running)
         {
             //access to GPS values and it has been init
 
-            
-         
+
+
+            //center
+            //float Current_Lat = 52.13233f;
+            //float Current_Lon = -106.62904f;
+
+            //hallway
+            //float Current_Lat = 52.13236f;
+            //float Current_Lon = -106.62906f;
+
+            //lounge
+            //float Current_Lat = 52.13221f;
+            //float Current_Lon = -106.63021f;
+
+            //1b12
+            //float Current_Lat = 52.13214f;
+            //float Current_Lon = -106.62976f;
+
             float Current_Lat = Input.location.lastData.latitude;
             float Current_Lon = Input.location.lastData.longitude;
             (double UTMNorth, double UTMEast) = ConvertToUTM(Current_Lat, Current_Lon);
 
             float North_Distance = (float)UTMNorth - (float)UTMRefPointN;
             float East_Distance = (float)UTMEast - (float)UTMRefPointE;
+
             Debug.Log("North Distance : " + North_Distance);
             Debug.Log("East Distance : " + East_Distance);
-            
-            me_marker.transform.position = new Vector3(East_Distance*eScaleRate, 200, North_Distance*nScaleRate);
-           
-            Debug.Log("ME X: "+ me_marker.transform.position.x);
-            Debug.Log("ME Z: " + me_marker.transform.position.z);
+
+
+            me_marker.transform.position = new Vector3(East_Distance, 1, North_Distance);
+            Debug.Log("marker postion: " + me_marker.transform.position);
+
         }
         else
         {
@@ -90,6 +111,8 @@ public class Eng1 : MonoBehaviour
             // service is stopped
         }
 
+
+        
     } // end of UpdateDateGPSData
     private (double NORTH, double EAST) ConvertToUTM(float lat, float lon)
     {
@@ -154,6 +177,6 @@ public class Eng1 : MonoBehaviour
     // Update is called once per 
     void Update()
     {
-        
+        UpdateGPSData();
     }
 }
