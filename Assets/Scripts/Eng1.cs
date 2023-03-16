@@ -6,11 +6,17 @@ using UnityEngine;
 
 public class Eng1 : MonoBehaviour
 {
-    private GameObject me_marker;
+    private GameObject player;
     //mid
     private double UTMRefPointN = 5777007.97;
     private double UTMRefPointE = 388499.26;
-    
+    //private Vector3 markerPosition;
+    private Vector3 userPosition;
+    private bool location_enabled=true;
+    private bool flag=false;
+    private float distance;
+    private float moveSpeed = 5f;
+    public float smoothing = 10f;
 
     //door
     //private double UTMRefPointN = 5776987.77;
@@ -21,13 +27,15 @@ public class Eng1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        me_marker = GameObject.Find("Player");
+        player = GameObject.Find("Player");
+        //player.SetActive(false);
+        //markerPosition = me_marker.transform.position;
         //me_marker.SetActive(false);
-        StartCoroutine(GPSLoc());
+        //StartCoroutine(GPSLoc());
     }
 
    
-    IEnumerator GPSLoc()
+   /* IEnumerator GPSLoc()
     {
         // Check if location services are enabled for the app
         if (!Input.location.isEnabledByUser)
@@ -70,50 +78,19 @@ public class Eng1 : MonoBehaviour
 
         if (Input.location.status == LocationServiceStatus.Running)
         {
-            //access to GPS values and it has been init
-
-
-
-            //center
-            //float Current_Lat = 52.13233f;
-            //float Current_Lon = -106.62904f;
-
-            //hallway
-            //float Current_Lat = 52.13236f;
-            //float Current_Lon = -106.62906f;
-
-            //lounge
-            //float Current_Lat = 52.13221f;
-            //float Current_Lon = -106.63021f;
-
-            //1b12
-            //float Current_Lat = 52.13214f;
-            //float Current_Lon = -106.62976f;
-
-            float Current_Lat = Input.location.lastData.latitude;
-            float Current_Lon = Input.location.lastData.longitude;
-            (double UTMNorth, double UTMEast) = ConvertToUTM(Current_Lat, Current_Lon);
-
-            float North_Distance = (float)UTMNorth - (float)UTMRefPointN;
-            float East_Distance = (float)UTMEast - (float)UTMRefPointE;
-
-            Debug.Log("North Distance : " + North_Distance);
-            Debug.Log("East Distance : " + East_Distance);
-
-
-            me_marker.transform.position = new Vector3(East_Distance, 1, North_Distance);
-            Debug.Log("marker postion: " + me_marker.transform.position);
+           location_enabled = true;
 
         }
         else
         {
             Debug.Log("GPSUpdate: Service Not Available");
+            location_enabled = true;
             // service is stopped
         }
 
 
         
-    } // end of UpdateDateGPSData
+    } // end of UpdateDateGPSData*/
     private (double NORTH, double EAST) ConvertToUTM(float lat, float lon)
     {
         double[] ret = new double[2];
@@ -177,6 +154,70 @@ public class Eng1 : MonoBehaviour
     // Update is called once per 
     void Update()
     {
-        UpdateGPSData();
+        if (location_enabled)
+        {
+            //access to GPS values and it has been init
+
+
+
+            //center
+            //float Current_Lat = 52.13233f;
+            //float Current_Lon = -106.62904f;
+
+
+            //A-Wing Hallway
+            float Current_Lat = 52.13300f;
+            float Current_Lon = -106.62866f;
+
+
+            //A-Wing
+            //float Current_Lat = 52.13232f;
+            //float Current_Lon = -106.62904f;
+
+            //1B71
+            //float Current_Lat = 52.13253f;
+            //float Current_Lon = -106.62949f;
+
+            //lounge
+            //float Current_Lat = 52.13223f;
+            //float Current_Lon = -106.63020f;
+
+            //1b12
+            //float Current_Lat = 52.13209f;
+            //float Current_Lon = -106.62975f;
+
+            //float Current_Lat = Input.location.lastData.latitude;
+            //float Current_Lon = Input.location.lastData.longitude;
+            (double UTMNorth, double UTMEast) = ConvertToUTM(Current_Lat, Current_Lon);
+
+            float North_Distance = (float)UTMNorth - (float)UTMRefPointN;
+            float East_Distance = (float)UTMEast - (float)UTMRefPointE;
+
+
+
+            Debug.Log("North Distance : " + North_Distance);
+            Debug.Log("East Distance : " + East_Distance);
+                        
+            userPosition = new Vector3(East_Distance*1.1f, 0f, North_Distance);
+            
+            
+            if (!flag)
+            {
+                //player.setActive(true);
+                player.transform.position = userPosition;
+                flag = true;
+                
+            }
+            distance = Vector3.Distance(userPosition, player.transform.position);
+
+            if (distance > 0.1f)
+            {
+                player.transform.position = Vector3.MoveTowards(player.transform.position, userPosition, Time.deltaTime * moveSpeed);
+                transform.position = Vector3.Lerp(transform.position, player.transform.position, Time.deltaTime * smoothing);
+            }
+            
+
+            Debug.Log("marker postion: " + player.transform.position);
+        }
     }
 }
