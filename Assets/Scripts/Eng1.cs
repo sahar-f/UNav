@@ -12,7 +12,7 @@ public class Eng1 : MonoBehaviour
     private double UTMRefPointE = 388499.26;
     //private Vector3 markerPosition;
     private Vector3 userPosition;
-    private bool location_enabled=true;
+    private bool location_enabled;
     private bool flag=false;
     private float distance;
     private float moveSpeed = 5f;
@@ -31,11 +31,11 @@ public class Eng1 : MonoBehaviour
         //player.SetActive(false);
         //markerPosition = me_marker.transform.position;
         //me_marker.SetActive(false);
-        //StartCoroutine(GPSLoc());
+        StartCoroutine(GPSLoc());
     }
 
    
-   /* IEnumerator GPSLoc()
+    IEnumerator GPSLoc()
     {
         // Check if location services are enabled for the app
         if (!Input.location.isEnabledByUser)
@@ -84,13 +84,13 @@ public class Eng1 : MonoBehaviour
         else
         {
             Debug.Log("GPSUpdate: Service Not Available");
-            location_enabled = true;
+            location_enabled = false;
             // service is stopped
         }
 
 
         
-    } // end of UpdateDateGPSData*/
+    } // end of UpdateDateGPSData
     private (double NORTH, double EAST) ConvertToUTM(float lat, float lon)
     {
         double[] ret = new double[2];
@@ -166,8 +166,8 @@ public class Eng1 : MonoBehaviour
 
 
             //A-Wing Hallway
-            float Current_Lat = 52.13300f;
-            float Current_Lon = -106.62866f;
+            //float Current_Lat = 52.13300f;
+            //float Current_Lon = -106.62866f;
 
 
             //A-Wing
@@ -186,8 +186,8 @@ public class Eng1 : MonoBehaviour
             //float Current_Lat = 52.13209f;
             //float Current_Lon = -106.62975f;
 
-            //float Current_Lat = Input.location.lastData.latitude;
-            //float Current_Lon = Input.location.lastData.longitude;
+            float Current_Lat = Input.location.lastData.latitude;
+            float Current_Lon = Input.location.lastData.longitude;
             (double UTMNorth, double UTMEast) = ConvertToUTM(Current_Lat, Current_Lon);
 
             float North_Distance = (float)UTMNorth - (float)UTMRefPointN;
