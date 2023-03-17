@@ -31,28 +31,17 @@ public class markerToggle : MonoBehaviour
         };
     }
 
-    //public void ToggleMarker(int markerIndex)
-    //{
-    //    markers[markerIndex].enabled = !markers[markerIndex].enabled;
-    //}
 
-    public void ToggleMarker(int index)
+    public void ToggleMarker(int markerIndex)
     {
-        markers[index].enabled = !markers[index].enabled; // toggle the marker on or off
-
-        if (markers[index].enabled)
-        {
-           // markers[index].GetComponent<UIBubblePopup>().Show(); // show the popup
-        }
-
-        else
-        {
-            //markers[index].GetComponent<UIBubblePopup>().Hide(); // hide the popup
-        }
+        markers[markerIndex].enabled = !markers[markerIndex].enabled;
     }
 
 
-    public void OnMarker1ButtonClick()
+
+
+
+public void OnMarker1ButtonClick()
     {
         ToggleMarker(0);
     }
