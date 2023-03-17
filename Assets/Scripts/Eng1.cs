@@ -7,12 +7,12 @@ using UnityEngine;
 public class Eng1 : MonoBehaviour
 {
     private GameObject player;
+  
     //mid
     private double UTMRefPointN = 5777007.97;
-    private double UTMRefPointE = 388499.26;
-    //private Vector3 markerPosition;
+    private double UTMRefPointE = 388499.26; 
     private Vector3 userPosition;
-    private bool location_enabled;
+    private bool location_enabled = true;
     private bool flag=false;
     private float distance;
     private float moveSpeed = 5f;
@@ -27,10 +27,7 @@ public class Eng1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
-        //player.SetActive(false);
-        //markerPosition = me_marker.transform.position;
-        //me_marker.SetActive(false);
+        player = GameObject.Find("Player");  
         StartCoroutine(GPSLoc());
     }
 
@@ -38,6 +35,7 @@ public class Eng1 : MonoBehaviour
     IEnumerator GPSLoc()
     {
         // Check if location services are enabled for the app
+        Input.location.Start(1f);
         if (!Input.location.isEnabledByUser)
         {
             Debug.Log("GPS: Not Enabled By User");
@@ -69,7 +67,7 @@ public class Eng1 : MonoBehaviour
         {
             //Access Granted
             InvokeRepeating("UpdateGPSData", 0.5f, 1f);
-            //me_marker.SetActive(true);
+            
         }
 
     } // end of GPSLocz
@@ -154,10 +152,15 @@ public class Eng1 : MonoBehaviour
     // Update is called once per 
     void Update()
     {
+        UpdateGPSData();
         if (location_enabled)
         {
             //access to GPS values and it has been init
 
+
+            //2c40
+            //float Current_Lat = 52.13207f;
+            //float Current_Lon = -106.62965f;
 
 
             //center
@@ -171,7 +174,7 @@ public class Eng1 : MonoBehaviour
 
 
             //A-Wing
-            //float Current_Lat = 52.13232f;
+            //float Current_Lat= 52.13232f;
             //float Current_Lon = -106.62904f;
 
             //1B71
@@ -183,24 +186,23 @@ public class Eng1 : MonoBehaviour
             //float Current_Lon = -106.63020f;
 
             //1b12
-            //float Current_Lat = 52.13209f;
-            //float Current_Lon = -106.62975f;
+            //float Current_Lat = 52.13212f;
+            //float Current_Lon = -106.62972f;
 
             float Current_Lat = Input.location.lastData.latitude;
             float Current_Lon = Input.location.lastData.longitude;
             (double UTMNorth, double UTMEast) = ConvertToUTM(Current_Lat, Current_Lon);
-
+           
             float North_Distance = (float)UTMNorth - (float)UTMRefPointN;
             float East_Distance = (float)UTMEast - (float)UTMRefPointE;
 
+            //Debug.Log("North Distance : " + North_Distance);
+            //Debug.Log("East Distance : " + East_Distance);
+
+            userPosition = new Vector3(East_Distance, 0f, North_Distance);
+         
 
 
-            Debug.Log("North Distance : " + North_Distance);
-            Debug.Log("East Distance : " + East_Distance);
-                        
-            userPosition = new Vector3(East_Distance*1.1f, 0f, North_Distance);
-            
-            
             if (!flag)
             {
                 //player.setActive(true);
@@ -217,7 +219,13 @@ public class Eng1 : MonoBehaviour
             }
             
 
-            Debug.Log("marker postion: " + player.transform.position);
+            //Debug.Log("marker postion: " + player.transform.position);
         }
+    }
+
+    void OnApplicationQuit()
+    {
+        //location service
+        Input.location.Stop();
     }
 }
