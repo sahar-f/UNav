@@ -12,7 +12,7 @@ public class Eng1 : MonoBehaviour
     private double UTMRefPointN = 5777007.97;
     private double UTMRefPointE = 388499.26; 
     private Vector3 userPosition;
-    private bool location_enabled = true;
+    private bool location_enabled;
     private bool flag=false;
     private float distance;
     private float moveSpeed = 5f;
