@@ -2,256 +2,226 @@
     "m_SelectedDeviceId": "R5CT927WZLD",
     "m_SelectedPackage": {
         "deviceId": "R5CT927WZLD",
-        "name": "com.DefaultCompany.UnavTest1",
-        "processId": 32670,
+        "name": "com.DefaultCompany.UNAVKL",
+        "processId": 28337,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 25894,
+            "name": "com.android.settings",
+            "processId": 8206,
             "exited": true
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 24352,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 16179,
             "exited": true
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 29359,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 17727,
             "exited": true
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 29095,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 20846,
             "exited": true
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.sec.android.app.launcher",
-            "processId": 3549,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 21805,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 30416,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 22461,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 30907,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 22995,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 10899,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 23710,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 15636,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 25237,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 16442,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 28260,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 22255,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 29045,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 25540,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 29727,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 27015,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 30257,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 19051,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 31565,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 20210,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 32591,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 21073,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 1999,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 23592,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 4744,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 30355,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 7466,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 32004,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 11526,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 1041,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 12383,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 2101,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 14725,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 5919,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 16913,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 8283,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 17571,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 11138,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 19336,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 13325,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 19800,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 15222,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 20313,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 18938,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 21248,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 20795,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 21724,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 21605,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 22326,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 22784,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 23605,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 25314,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 24212,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 26982,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 24803,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 28018,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 26408,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 28706,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 26961,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 29667,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 27400,
             "exited": false
         },
         {
             "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 30190,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 30687,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 31168,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 31714,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 32167,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT927WZLD",
-            "name": "com.DefaultCompany.UnavTest1",
-            "processId": 32670,
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 28337,
             "exited": false
         }
     ],
@@ -263,7 +233,7 @@
             },
             {
                 "m_Name": "No Filter",
-                "m_Selected": true
+                "m_Selected": false
             },
             {
                 "m_Name": "",
@@ -279,11 +249,11 @@
             },
             {
                 "m_Name": "Unity",
-                "m_Selected": false
+                "m_Selected": true
             },
             {
                 "m_Name": "CRASH",
-                "m_Selected": false
+                "m_Selected": true
             }
         ]
     },
@@ -306,7 +276,7 @@
         "Behavior": 0
     },
     "m_FilterOptions": {
-        "m_Filter": "",
+        "m_Filter": "ME  ",
         "m_UseRegularExpressions": true,
         "m_MatchCase": true
     },
