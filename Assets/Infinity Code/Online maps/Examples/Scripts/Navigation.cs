@@ -19,7 +19,6 @@ namespace InfinityCode.OnlineMapsDemos
         /// Reference to destination input field.
         /// </summary>
         public InputField destinationInput;
-        ///destinationInput = destinationInput + "Saskatoon";
 
         /// <summary>
         /// Reference to route confirmation UI.
@@ -181,7 +180,7 @@ namespace InfinityCode.OnlineMapsDemos
             OnlineMapsGoogleDirections request = OnlineMapsGoogleDirections.Find(
                 new OnlineMapsGoogleDirections.Params(
                     GetUserLocation(),
-                    destinationInput.text+"Saskatoon"));
+                    destinationInput.text));
 
             // When the request is complete call the OnRequestComplete method.
             request.OnComplete += OnRequestComplete;
@@ -460,7 +459,7 @@ namespace InfinityCode.OnlineMapsDemos
             OnlineMapsGoogleDirections request = OnlineMapsGoogleDirections.Find(
                 new OnlineMapsGoogleDirections.Params(
                     GetUserLocation(),
-                    destinationInput.text+"Saskatoon"));
+                    destinationInput.text));
 
             // When the request is complete call OnUpdateRouteComplete method.
             request.OnComplete += OnUpdateRouteComplete;
