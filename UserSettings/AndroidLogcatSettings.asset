@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CT927WZLD",
         "name": "com.DefaultCompany.UNAVKL",
-        "processId": 28337,
+        "processId": 19943,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -222,6 +222,12 @@
             "deviceId": "R5CT927WZLD",
             "name": "com.DefaultCompany.UNAVKL",
             "processId": 28337,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT927WZLD",
+            "name": "com.DefaultCompany.UNAVKL",
+            "processId": 19943,
             "exited": false
         }
     ],

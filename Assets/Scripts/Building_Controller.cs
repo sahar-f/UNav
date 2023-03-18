@@ -6,9 +6,7 @@ public class Building_Controller : MonoBehaviour
     private const float tapThreshold = 0.2f;
     private OrthoCameraController cameraController;
     private Building_Info building_info;
-    private int floor_cur;
-    private int floor_min;
-    private int floor_max;
+   
 
 
     private void Start()
