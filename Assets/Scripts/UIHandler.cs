@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class UIHandler : MonoBehaviour
     public TMP_InputField searchField;
     private OrthoCameraController cameraController;
     public bool Events_Visible = false;
+    public bool Restaurants_Visible = false;
+    public bool Services_Visible = false;
+    private Button EventButton;
+    private Button RestaurantButton;
+    private Button ServicesButton;
+
     private SystemHandler syshand;
 
     private List<string> originalOptions = new List<string>();
@@ -31,7 +38,9 @@ public class UIHandler : MonoBehaviour
         dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
         cameraController = FindObjectOfType<OrthoCameraController>();
         syshand = FindObjectOfType<SystemHandler>();
-
+        EventButton = transform.Find("Events Button").GetComponent<Button>();
+        RestaurantButton = transform.Find("Restaurant Button").GetComponent<Button>();
+        ServicesButton = transform.Find("Services Button").GetComponent<Button>();
 
 
     }
@@ -93,11 +102,18 @@ public class UIHandler : MonoBehaviour
         {
             syshand.Events_Destroy();
             Events_Visible= false;
+            ColorBlock colors = EventButton.colors;
+            colors.normalColor = Color.red;
+            EventButton.colors = colors;
+
         }
         else
         {
             syshand.Events_Create();
             Events_Visible= true;
+            ColorBlock colors = EventButton.colors;
+            colors.normalColor = Color.green;
+            EventButton.colors = colors;
         }
     }
 }
