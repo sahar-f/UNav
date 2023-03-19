@@ -62,6 +62,19 @@ public class Building_Controller : MonoBehaviour
             lastTapTime = Time.time;
 
     }
+    public void Set_Top()
+    {
+        Renderer myRenderer = building_info.Floor_1.GetComponent<Renderer>();
+        myRenderer.enabled = false;
+        myRenderer = building_info.Floor_2.GetComponent<Renderer>();
+        myRenderer.enabled = false;
+        myRenderer = building_info.Floor_3.GetComponent<Renderer>();
+        myRenderer.enabled = false;
+        myRenderer = building_info.Floor_Top.GetComponent<Renderer>();
+        myRenderer.enabled = true;
+
+
+    }
     public void Flick_Up()
         // This is poorly writen, it should do it automatically, not hard coded like it is.
     {

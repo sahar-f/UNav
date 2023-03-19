@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Unity.VisualScripting.FlowStateWidget;
+
 
 public static class Globals
 {
@@ -15,15 +15,22 @@ public static class Globals
     public static List<RestaurantData> Restaurant_List= new List<RestaurantData>();
     public static List<ServicesData> Services_List= new List<ServicesData>();
     public static List<string>Building_Names= new List<string>();
+    public static bool EventViewer_Visible = true;
+    public static GameObject EventViewer;
+    
 
     public struct EventData
     {
         public string name;
+        public string title;
+        public string date;
+        public string location;
+        public string available;
         public double x_location;
         public double y_location;
         public double z_location;
-        public DateTime event_start;
-        public DateTime event_end;
+        public string event_start;
+        public string event_end;
         public string event_info;
         public string event_type;
         public GameObject event_object;

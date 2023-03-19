@@ -47,10 +47,18 @@ public class OrthoCameraController : MonoBehaviour
     {
         inside_building= false;
         building_info.inside_building = false;
+        Renderer myRenderer = building_info.Floor_1.GetComponent<Renderer>();
+        myRenderer.enabled = false;
+        myRenderer = building_info.Floor_2.GetComponent<Renderer>();
+        myRenderer.enabled = false;
+        myRenderer = building_info.Floor_3.GetComponent<Renderer>();
+        myRenderer.enabled = false;
+        myRenderer = building_info.Floor_Top.GetComponent<Renderer>();
+        myRenderer.enabled = true;
         Vector3 objectPosition = new Vector3(building_info.Center_X, building_info.Center_Y, building_info.Center_Z);
         PanToGameObject(objectPosition);
         RotateToGameObject(-building_info.Rotate_Camera);
-        ZoomTo(2800f);
+        ZoomTo(2500f);
     }
 
     private void Start()
@@ -168,6 +176,8 @@ public class OrthoCameraController : MonoBehaviour
                         float newOrthoSize = Mathf.Clamp(mainCamera.orthographicSize + deltaZoom * zoomSpeed * Time.deltaTime, minZoom, maxZoom);
                         mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, newOrthoSize, zoomLerpSpeed * Time.deltaTime);
                         lastZoomDistance = zoomDistance;
+                        if (newOrthoSize > 2500)
+                        { Exit_Building(); }
                     }
                 }
                 else
@@ -183,6 +193,8 @@ public class OrthoCameraController : MonoBehaviour
                 {
                     float newOrthoSize = Mathf.Clamp(mainCamera.orthographicSize - scroll * zoomSpeed * 400f, minZoom, maxZoom);
                     mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, newOrthoSize, zoomLerpSpeed * Time.deltaTime);
+                    if (newOrthoSize > 2500)
+                    { Exit_Building(); }
                 }
                 // Handle Pan/Flick
                 if (Input.GetMouseButtonDown(0))

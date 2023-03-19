@@ -15,6 +15,7 @@ public class UIHandler : MonoBehaviour
     public bool Restaurants_Visible = false;
     public bool Services_Visible = false;
     private SystemHandler syshand;
+    private GameObject EventViewer;
 
     private List<string> originalOptions = new List<string>();
     
@@ -33,7 +34,8 @@ public class UIHandler : MonoBehaviour
         dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
         cameraController = FindObjectOfType<OrthoCameraController>();
         syshand = FindObjectOfType<SystemHandler>();
-
+        Globals.EventViewer = GameObject.Find("EventViewer");
+        Globals.EventViewer.SetActive(false);
 
 
     }

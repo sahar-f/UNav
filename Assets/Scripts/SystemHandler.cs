@@ -13,28 +13,34 @@ public class SystemHandler : MonoBehaviour
     void Start()
     {
         Globals.EventData test1 = new();
-        test1.event_start = DateTime.Now;
-        test1.event_end = DateTime.Now;
+        test1.date = "April 5 2023";
+        test1.event_start = "5PM";
+        test1.event_end = "7PM";
+        test1.location = "The Bowl";
         test1.x_location = 10;
         test1.y_location = 50;
         test1.z_location = 30;
-
-        test1.name = "Test Event";
-        test1.event_info = "This is a Test of The Event System";
+        test1.title = "Free Pancakes";
+        test1.available = "Everyone";
+        test1.name = "Event1";
+        test1.event_info = "This is HOW you Get Free Pancakes.  You spend a year making an app and then trying to convince others to use your product so you can always know where them yummy golden tasty, omg, i'm so hungry while i'm writing this. ";
 
         Globals.Events_Add(test1);
 
-        Globals.RestaurantData test2 = new();
-        test2.event_start = DateTime.Now;
-        test2.event_end = DateTime.Now;
+        Globals.EventData test2 = new();
+        test2.event_start = "9AM";
+        test2.date = "March 30 2023";
+        test2.event_end = "4PM";
+        test2.location = "Athabasca Hall";
         test2.x_location = 15;
         test2.y_location = 55;
-        test2.z_location = 35;
+        test2.z_location = 400;
+        test2.title = "BBQ";
+        test2.available = "College of Engineering Students Only";
+        test2.name = "event2";
+        test2.event_info = "Come Eat Some Food";
 
-        test2.name = "Test Event";
-        test2.event_info = "This is a Test of The Event System";
-
-        Globals.Resturant_Add(test2);
+        Globals.Events_Add(test2);
 
 
 
@@ -55,6 +61,10 @@ public class SystemHandler : MonoBehaviour
 
                 evt.event_object.transform.position = new Vector3((float)evt.x_location, (float)evt.y_location, (float)evt.z_location);
                 // evt.event_object.transform.localScale = new Vector3(100,100,100);
+                
+                // Add the script to the GameObject
+                EventHandler evthand = evt.event_object.AddComponent<EventHandler>();
+
             }
 
         }
