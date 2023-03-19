@@ -15,6 +15,8 @@ public class Building_Controller : MonoBehaviour
         building_info = GetComponent<Building_Info>();
 
         // Set the Top of The Building as the Default
+        MeshRenderer floor1_mesh = GameObject.Find("Floor1").GetComponent<MeshRenderer>();
+        floor1_mesh.enabled = false;
         Renderer myRenderer = building_info.Floor_1.GetComponent<Renderer>();
         myRenderer.enabled = false;
         myRenderer = building_info.Floor_2.GetComponent<Renderer>();
@@ -42,6 +44,9 @@ public class Building_Controller : MonoBehaviour
             {
                 cameraController.Enter_Building(building_info);
                 Renderer myRenderer = building_info.Floor_1.GetComponent<Renderer>();
+                MeshRenderer floor1_mesh = GameObject.Find("Floor1").GetComponent<MeshRenderer>();
+
+                floor1_mesh.enabled = true;
                 myRenderer.enabled = true;
                 myRenderer = building_info.Floor_2.GetComponent<Renderer>();
                 myRenderer.enabled = false;
@@ -63,6 +68,10 @@ public class Building_Controller : MonoBehaviour
         if (building_info.floor_cur == 1)
         {
             Renderer myRenderer = building_info.Floor_1.GetComponent<Renderer>();
+           
+            MeshRenderer floor1_mesh = GameObject.Find("Floor1").GetComponent<MeshRenderer>();
+          
+            floor1_mesh.enabled = false;
             myRenderer.enabled = false;
             myRenderer = building_info.Floor_2.GetComponent<Renderer>();
             myRenderer.enabled = true;

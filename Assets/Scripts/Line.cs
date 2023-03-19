@@ -13,14 +13,13 @@ public class Line : MonoBehaviour
     {
         agent = marker.GetComponent<NavMeshAgent>();
         lineRenderer = GetComponent<LineRenderer>();
+       
     }
 
-    void Update()
-    {
-        // Set the destination of the NavMeshAgent to the target object
-        //agent.SetDestination(target.position);
 
-        // Get the path points from the NavMeshAgent
+    void startNavigation()
+    {
+        //target = transform.Find("1B71EngineeringBuilding");
         NavMeshPath path = new NavMeshPath();
         agent.CalculatePath(target.position, path);
         //Debug.Log("Corners: " + path.corners.Length);
@@ -30,6 +29,19 @@ public class Line : MonoBehaviour
         {
             lineRenderer.enabled = false;
         }
+
+
+
+    }
+
+    void Update()
+    {
+        // Set the destination of the NavMeshAgent to the target object
+        //agent.SetDestination(target.position);
+
+        // Get the path points from the NavMeshAgent
+        startNavigation();
+        
 
 
 
