@@ -12,6 +12,8 @@ public class UIHandler : MonoBehaviour
     public TMP_InputField searchField;
     private OrthoCameraController cameraController;
     public bool Events_Visible = false;
+    public bool Restaurants_Visible = false;
+    public bool Services_Visible = false;
     private SystemHandler syshand;
 
     private List<string> originalOptions = new List<string>();
@@ -98,6 +100,32 @@ public class UIHandler : MonoBehaviour
         {
             syshand.Events_Create();
             Events_Visible= true;
+        }
+    }
+    public void Rstr_ClickHandler()
+    {
+        if (Restaurants_Visible)
+        {
+            syshand.Rstr_Destroy();
+            Restaurants_Visible = false;
+        }
+        else
+        {
+            syshand.Rstr_Create();
+            Restaurants_Visible = true;
+        }
+    }
+    public void Services_ClickHandler()
+    {
+        if (Services_Visible)
+        {
+            syshand.Services_Destroy();
+            Services_Visible = false;
+        }
+        else
+        {
+            syshand.Services_Create();
+            Services_Visible = true;
         }
     }
 }
