@@ -1,37 +1,67 @@
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class Line : MonoBehaviour
 {
-    public Transform marker;
-    public Transform target;
+    public static GameObject marker;
+    private static GameObject target;
 
-    private NavMeshAgent agent;
-    private LineRenderer lineRenderer;
+    private static NavMeshAgent agent;
+    private static LineRenderer lineRenderer;
+    private static float distanceThreshold = 50f;
+    public static TMP_InputField inputField;
+    public static bool flag;
+    public static string holder;
+
 
     void Start()
     {
+        marker = GameObject.Find("GPSMarker");
         agent = marker.GetComponent<NavMeshAgent>();
         lineRenderer = GetComponent<LineRenderer>();
+        flag = false;
+        
+        lineRenderer.enabled = false;
        
     }
 
-
-    void startNavigation()
+    public static void beginNavigation(string name)
     {
-        //target = transform.Find("1B71EngineeringBuilding");
-        NavMeshPath path = new NavMeshPath();
-        agent.CalculatePath(target.position, path);
-        //Debug.Log("Corners: " + path.corners.Length);
-        lineRenderer.positionCount = path.corners.Length;
-        lineRenderer.SetPositions(path.corners);
-        if (marker.position == target.position)
-        {
-            lineRenderer.enabled = false;
-        }
+        holder= name;
+        flag = true;
+    }
+    void startNavigation(string name)
+    {
+        target = GameObject.Find(name);
+        float distance = Vector3.Distance(marker.transform.position, target.transform.position);
+
+        
+            if (distance < distanceThreshold)
+            {
+                lineRenderer.enabled = false;
+                flag = false;
+
+                
+            }
+            else
+            {
+                NavMeshPath path = new NavMeshPath();
+                agent.SetDestination(target.transform.position);
+                agent.CalculatePath(target.transform.position, path);
+                //Debug.Log("Corners: " + path.corners.Length);
+                lineRenderer.positionCount = path.corners.Length;
+                lineRenderer.SetPositions(path.corners);
+                lineRenderer.enabled = true;
+            }
+        
 
 
 
+    }
+    void CancelNavigation()
+    {
+        lineRenderer.enabled=false;
     }
 
     void Update()
@@ -40,10 +70,25 @@ public class Line : MonoBehaviour
         //agent.SetDestination(target.position);
 
         // Get the path points from the NavMeshAgent
-        startNavigation();
+
+        /*string search = inputField.text;
+        if (search != " ")
+        {
+            startNavigation(search);
+        }*/
         
 
-
-
+        //or simply use the line below, 
+        //input.onEndEdit.AddListener(SubmitName);  // This also works
+        if (flag)
+        {
+            startNavigation(holder);
+        }
     }
+
+
+
+
 }
+    
+        

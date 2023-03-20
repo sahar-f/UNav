@@ -106,7 +106,7 @@ public class GpsLocation : MonoBehaviour
             Debug.Log("ME X Distance : " + X_Distance);
             Debug.Log("ME Y Distance : " + Y_Distance);
             
-            me_marker.transform.position = new Vector3((float)ScreenRefX + (X_Distance *eScaleRate), 200, (float)ScreenRefY +(Y_Distance * nScaleRate));
+            me_marker.transform.position = new Vector3((float)ScreenRefX + (X_Distance *eScaleRate), 701, (float)ScreenRefY +(Y_Distance * nScaleRate));
             Debug.Log("ME X: "+ me_marker.transform.position.x);
             Debug.Log("ME Z: " + me_marker.transform.position.z);
 

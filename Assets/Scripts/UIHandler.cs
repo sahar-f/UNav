@@ -78,6 +78,7 @@ public class UIHandler : MonoBehaviour
        
         searchField.text = dropdown.options[index].text;
         dropdown.gameObject.SetActive(false);
+        Line.beginNavigation(searchField.text);
 
        GameObject target = GameObject.Find(searchField.text);
       if (target != null) { }
