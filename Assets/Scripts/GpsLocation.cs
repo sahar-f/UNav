@@ -25,6 +25,7 @@ public class GpsLocation : MonoBehaviour
     private double ScreenRefX2 = 3775;
     public float nScaleRate = 1f;
     public float eScaleRate = 1f;
+    public static float height=701f;
 
     // Start is called before the first frame update
     void Start()
@@ -87,6 +88,10 @@ public class GpsLocation : MonoBehaviour
         }
 
     } // end of GPSLoc
+
+    public static void setHeight(float y_value){
+        height=y_value;
+    }
     private void UpdateGPSData() 
     {
        
@@ -106,7 +111,7 @@ public class GpsLocation : MonoBehaviour
             Debug.Log("ME X Distance : " + X_Distance);
             Debug.Log("ME Y Distance : " + Y_Distance);
             
-            me_marker.transform.position = new Vector3((float)ScreenRefX + (X_Distance *eScaleRate), 701, (float)ScreenRefY +(Y_Distance * nScaleRate));
+            me_marker.transform.position = new Vector3((float)ScreenRefX + (X_Distance *eScaleRate), height, (float)ScreenRefY +(Y_Distance * nScaleRate));
             Debug.Log("ME X: "+ me_marker.transform.position.x);
             Debug.Log("ME Z: " + me_marker.transform.position.z);
 

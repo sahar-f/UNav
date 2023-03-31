@@ -25,6 +25,7 @@ public class Building_Controller : MonoBehaviour
         myRenderer.enabled = false;
         myRenderer = building_info.Floor_Top.GetComponent<Renderer>();
         myRenderer.enabled = true;
+        GpsLocation.setHeight(701f);
         building_info.floor_cur = 1;
 
     }
@@ -48,6 +49,7 @@ public class Building_Controller : MonoBehaviour
 
                 floor1_mesh.enabled = true;
                 myRenderer.enabled = true;
+                GpsLocation.setHeight(726f);
                 myRenderer = building_info.Floor_2.GetComponent<Renderer>();
                 myRenderer.enabled = false;
                 myRenderer = building_info.Floor_3.GetComponent<Renderer>();
@@ -72,6 +74,7 @@ public class Building_Controller : MonoBehaviour
         myRenderer.enabled = false;
         myRenderer = building_info.Floor_Top.GetComponent<Renderer>();
         myRenderer.enabled = true;
+        GpsLocation.setHeight(701f);
 
 
     }
@@ -88,6 +91,7 @@ public class Building_Controller : MonoBehaviour
             myRenderer.enabled = false;
             myRenderer = building_info.Floor_2.GetComponent<Renderer>();
             myRenderer.enabled = true;
+            GpsLocation.setHeight(751f);
             myRenderer = building_info.Floor_3.GetComponent<Renderer>();
             myRenderer.enabled = false;
             myRenderer = building_info.Floor_Top.GetComponent<Renderer>();
@@ -121,6 +125,7 @@ public class Building_Controller : MonoBehaviour
             myRenderer.enabled = false;
             myRenderer = building_info.Floor_2.GetComponent<Renderer>();
             myRenderer.enabled = true;
+            GpsLocation.setHeight(751f);
             myRenderer = building_info.Floor_3.GetComponent<Renderer>();
             myRenderer.enabled = false;
             myRenderer = building_info.Floor_Top.GetComponent<Renderer>();
@@ -132,6 +137,7 @@ public class Building_Controller : MonoBehaviour
         {
             Renderer myRenderer = building_info.Floor_1.GetComponent<Renderer>();
             myRenderer.enabled = true;
+            GpsLocation.setHeight(726f);
             myRenderer = building_info.Floor_2.GetComponent<Renderer>();
             myRenderer.enabled = false;
             myRenderer = building_info.Floor_3.GetComponent<Renderer>();

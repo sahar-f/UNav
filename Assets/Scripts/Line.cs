@@ -47,7 +47,7 @@ public class Line : MonoBehaviour
             else
             {
                 NavMeshPath path = new NavMeshPath();
-                agent.SetDestination(target.transform.position);
+                //agent.SetDestination(target.transform.position);
                 agent.CalculatePath(target.transform.position, path);
                 //Debug.Log("Corners: " + path.corners.Length);
                 lineRenderer.positionCount = path.corners.Length;
