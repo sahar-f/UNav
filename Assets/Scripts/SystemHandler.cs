@@ -7,11 +7,16 @@ using UnityEngine;
 
 public class SystemHandler : MonoBehaviour
 {
-   
+    string url = "http://34.219.29.19/markers_get.php";
 
     // Start is called before the first frame update
     void Start()
     {
+        WWW www = new WWW(url);
+        yield return www;
+        string result = www.text;
+        print("data received" + result);
+
         Globals.EventData test1 = new();
         test1.date = "April 5 2023";
         test1.event_start = "5PM";
